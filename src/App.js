@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LyricsProvider from "./LyricsProvider";
 import Navbar from "./components/layout/Navbar";
@@ -13,10 +13,10 @@ function App() {
         <>
           <Navbar />
           <div className="container">
-            <Switch>
-              <Route exact path="/" component={Index} />
-              <Route exact path="/lyrics/track/:id" component={Lyrics} />
-            </Switch>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/lyrics/track/:id" element={<Lyrics />} />
+            </Routes>
           </div>
         </>
       </Router>
